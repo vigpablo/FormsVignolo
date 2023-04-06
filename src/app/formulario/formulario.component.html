@@ -1,0 +1,43 @@
+<main class="container-fluid">
+  <section class="card w-50">
+    <div class="card-body">
+      <h5 class="card-title">Formulario</h5>
+
+      <form [formGroup]="contactoForm" (ngSubmit)="onSubmit()">
+        <div class="row g-3">
+          <div class="col">
+            <input formControlName="nombre" [class.is-invalid]="nombreControl.invalid && nombreControl.touched" type="text" class="form-control" placeholder="First name" aria-label="First name">
+            <div *ngIf="nombreControl.hasError('required')" class="invalid-feedback">
+              No has ingresado información válida
+            </div>
+            <div *ngIf="nombreControl.hasError('minlength')" class="invalid-feedback">
+              Debes ingresas mínimo 3 caracteres
+            </div>
+          </div>
+        <div class="col">
+          <input formControlName="apellido" [class.is-invalid]="apellidoControl.invalid && nombreControl.touched" type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+        </div>
+        <div *ngIf="apellidoControl.hasError('required')" class="invalid-feedback">
+          No has ingresado información válida
+        </div>
+        <div *ngIf="apellidoControl.hasError('minlength')" class="invalid-feedback">
+          Debes ingresas mínimo 3 caracteres
+        </div>
+        <div class="col-12">
+          <input formControlName="email" [class.is-invalid]="emailControl.invalid && nombreControl.touched" type="email" class="form-control" placeholder="email" aria-label="email">
+        </div>
+        <div *ngIf="emailControl.hasError('required')" class="invalid-feedback">
+          No has ingresado información válida
+        </div>
+        <div *ngIf="emailControl.hasError('minlength')" class="invalid-feedback">
+          Debes ingresas mínimo 3 caracteres
+        </div>
+        <div class="col-12 mt-4">
+          <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+        </div>
+      </form>
+
+</div>
+</section>
+</main>
