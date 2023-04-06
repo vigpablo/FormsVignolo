@@ -15,22 +15,24 @@
             </div>
           </div>
         <div class="col">
-          <input formControlName="apellido" [class.is-invalid]="apellidoControl.invalid && nombreControl.touched" type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-        </div>
+          <input formControlName="apellido" [class.is-invalid]="apellidoControl.invalid && apellidoControl.touched" type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+        
         <div *ngIf="apellidoControl.hasError('required')" class="invalid-feedback">
           No has ingresado información válida
         </div>
         <div *ngIf="apellidoControl.hasError('minlength')" class="invalid-feedback">
           Debes ingresas mínimo 3 caracteres
         </div>
-        <div class="col-12">
-          <input formControlName="email" [class.is-invalid]="emailControl.invalid && nombreControl.touched" type="email" class="form-control" placeholder="email" aria-label="email">
         </div>
+        <div class="col-12">
+          <input formControlName="email" [class.is-invalid]="emailControl.invalid && emailControl.touched" type="email" class="form-control" placeholder="email" aria-label="email">
+        
         <div *ngIf="emailControl.hasError('required')" class="invalid-feedback">
           No has ingresado información válida
         </div>
         <div *ngIf="emailControl.hasError('minlength')" class="invalid-feedback">
           Debes ingresas mínimo 3 caracteres
+        </div>
         </div>
         <div class="col-12 mt-4">
           <button type="submit" class="btn btn-primary">Registrar</button>
